@@ -10,13 +10,11 @@
 - 直接检查 EROFS 镜像内 APK 完整性
 - 从解包目录打包 RW ext4 镜像
 - raw/ext4 与 Android sparse 镜像互转
-- 修补 Android 13 arm64 GSI 的 `/system/lib64/libfs_mgr.so`，让 `/vendor` 使用 ext4 挂载
+- 因为华为emui9.1设备转换vendor为ext4时会导致挂载失败造成gsi不开机,支持修补 Android 13 arm64 GSI 的 `/system/lib64/libfs_mgr.so`
 
 ## 不包含
 
 - 不提供 EROFS 回打/重打包功能
-- 不修改 DTS、DTO、kernel、boot、vendor 镜像
-- 不包含任何固件镜像或设备私有文件
 
 ## 环境要求
 
@@ -81,10 +79,3 @@ python .\emui91_erofs_ext4.py sparse raw.img sparse.img
 python .\emui91_erofs_ext4.py unsparse sparse.img raw.img
 ```
 
-## 发布包
-
-发布目录只应包含脚本、说明书、校验清单和许可证。不要把固件镜像、测试输出、临时目录、设备私有文件一起上传。
-
-## License
-
-MIT License
