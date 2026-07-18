@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.img
+*.raw
+*.raw.tmp
+*.log
+*.pid
+*.zip
+*_extracted/
+*_patched/
+.emui91_*_work_*/
